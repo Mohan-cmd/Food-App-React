@@ -1,3 +1,90 @@
 #headingg{
     color: aqua;
 }
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid salmon;
+    padding:10px;
+}
+
+.logo{
+   max-width: 100%; 
+}
+
+.nav-items>ul{
+    display: flex;
+    list-style: none;
+    padding-right: 20px;
+}
+
+.nav-items>ul>li{
+    padding: 10px;
+    font-size: 14px;
+}
+
+.card{
+    margin:3px;
+    padding: 2px;
+    width: 210px;
+    border: 1px solid salmon;
+    
+}
+.card:hover{
+    cursor: pointer;
+    background-color: lightsalmon;
+}
+.cardImage{
+    max-width: 100%;
+   aspect-ratio: 1/1;
+}
+.cardcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+}
+.searchClass{
+    padding: 2px;
+}
+.filter-btn{
+    cursor: pointer;
+    margin:8px 20px;
+    background-color: lightsalmon;
+    border: 1px solid black;
+    padding: 3px 18px;
+    font-size: 14px;
+    width: 190px;
+    border-radius: 3px;
+
+}
+
+.shimmer-Card{
+    margin:3px;
+    padding: 2px;
+    width: 210px;
+    height: 403px;
+    border: 1px solid salmon;
+    background-color: #f0f0f0;
+}
+.shimmer-Container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shimmer-filter-btn{
+    background-color: #f0f0f0;
+}
+
+.classbutton{
+    background-color: transparent;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.logoutClass{
+    background-color: lightsalmon;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 3px;
+}
