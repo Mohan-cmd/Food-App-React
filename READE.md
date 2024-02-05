@@ -38,3 +38,8 @@
 
 - Client side routing - doesnt come from backennd again , does it from client side itself s
 - Server Side Routing
+
+# Chunking or Code Splitting or Dynamic Bundling or Lazy Loading or On demand loading or dynamic loading
+
+- splitting our app into moudles so that load does not fall on single js file or bundle we divide it into bundles
+- we will load when required 

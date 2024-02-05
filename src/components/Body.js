@@ -4,6 +4,7 @@ import Cardcomponent from "./Cardcomponent"
 import { DATA_ARRAY_OBJECT } from "../utils/mockData"
 import ShimmerCard from "./ShimmerCard"
 import { Link } from "react-router-dom"
+import useOnlineStatus from "../utils/useOnlineStatus"
 
 const Body=()=>{
    // const [listOfResstaurents,setlistOfRestaurents]=useState(DATA_ARRAY_OBJECT)
@@ -36,7 +37,9 @@ const Body=()=>{
 //    }
 //console.log("search vaue: "+searchValue)
 
-
+if(!useOnlineStatus()){
+    return <h3>Oops!!!  looks like You are Offline, Please check your internet connect</h3>
+}
 
     return listOfResstaurents.length===0 ? <ShimmerCard /> : (
         <div className="bodycontainer">

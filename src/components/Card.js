@@ -36,7 +36,7 @@ function Card(params) {
                     {params.ItemDescription}
                     <br/>
                     {/* <div style={{display:"flex", alignItems:"center"}}> */}
-                      <img src={IMAGE_LINK_CLODINARY+params.imageId} style={{width:"100px",height:"100px", display:"flex", justifyContent:"center", borderRadius:"3px" }}>
+                      <img src={IMAGE_LINK_CLODINARY+params.imageId} style={{width:"120px",height:"100px", display:"flex", justifyContent:"center", borderRadius:"3px" }}>
                       </img> 
                     <div/>
                 </div>
