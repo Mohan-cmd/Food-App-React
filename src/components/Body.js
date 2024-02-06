@@ -4,13 +4,17 @@ import Cardcomponent from "./Cardcomponent"
 import { DATA_ARRAY_OBJECT } from "../utils/mockData"
 import ShimmerCard from "./ShimmerCard"
 import { Link } from "react-router-dom"
-import useOnlineStatus from "../utils/useOnlineStatus"
+import useOnlineStatus from "../utils/useOnlineStatus";
+import { withPromotedLabel } from "./Cardcomponent"
+
 
 const Body=()=>{
    // const [listOfResstaurents,setlistOfRestaurents]=useState(DATA_ARRAY_OBJECT)
    const [listOfResstaurents,setlistOfRestaurents]=useState([])
    const [filteredRestaurants,setfilteredRestaurants]=useState([])
-    const[searchValue,setsearchValue]=useState("")
+   const[searchValue,setsearchValue]=useState("")
+   const CardComponentPromoted = withPromotedLabel(Cardcomponent)
+
     useEffect(()=>{
         fetchData();
     },[])
@@ -42,25 +46,27 @@ if(!useOnlineStatus()){
 }
 
     return listOfResstaurents.length===0 ? <ShimmerCard /> : (
-        <div className="bodycontainer">
+        <div className="m-4">
         <div className="filter">
-          <input style={{padding:"3px 0px",width:"140px",margin:"8px 1px 8px 6px",border:"1px solid black",borderRadius:"2px"}} value={searchValue} onChange={((e)=>
+          <input style={{padding:"3px 0px",height:"27px",width:"140px",margin:"8px 1px 8px 6px",border:"1px solid black",borderRadius:"2px"}} value={searchValue} onChange={((e)=>
             setsearchValue(e.target.value)
           )}></input>
-        <button style={{width:"60px",backgroundColor:"lightsalmon", padding:"3px 0px",borderRadius:"2px",margin:"0px 0px",border:"1px solid black"}}onClick={()=>{
+        <button style={{width:"60px",backgroundColor:"lightsalmon", padding:"1px 0px",borderRadius:"2px",margin:"0px 0px",border:"1px solid black"}}onClick={()=>{
            const filtVal=listOfResstaurents.filter((obj)=>(obj.info.name.toLowerCase().includes(searchValue.toLowerCase())));
            setfilteredRestaurants(filtVal)}}>Search</button>
         
-        <button className="filter-btn" onClick={()=>{
+        <button className="ml-8 pl-3 pr-3 pt-[1px] pb-[2px] border border-black bg-[#ffa07a] rounded-[2px]" onClick={()=>{
                const filteredList=listOfResstaurents.filter((reqdata)=>reqdata.info.avgRating>4.2);
                setfilteredRestaurants(filteredList)
               
             }}>Top Rated Restaurents</button>
         </div>
-            <div className="cardcontainer">
+            <div className="flex flex-wrap">
             {filteredRestaurants.map((restaurent)=>(
                 <Link to={"/restaurants/"+restaurent.info.id} key={restaurent.info.id}>
+                { restaurent?.info?.aggregatedDiscountInfoV3?.header ? <CardComponentPromoted resData={restaurent}/> :
                 <Cardcomponent resData={restaurent}/>
+                }
                 </Link>))
             }</div>
             {/* if no unique keys are present then use index

@@ -13,9 +13,9 @@ function Card(params) {
     };
 
     return (
-        <div className="card" style={{width:"500px"}}>
+        <div className="flex-col justify-center items-center m-auto" style={{width:"500px"}}>
             {/* Card header */}
-            <div className="card-header" role="button" aria-expanded={expanded} onClick={toggleExpansion}
+            <div className="font-bold" role="button" aria-expanded={expanded} onClick={toggleExpansion}
                 onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                         toggleExpansion();
@@ -24,19 +24,19 @@ function Card(params) {
                 tabIndex="0" >
                {params.ItemName} 
                 {/* Dropdown icon */}
-                <span className="dropdown-icon">
+                <span className="m-2">
                     <FontAwesomeIcon icon={expanded ? faChevronUp : faChevronDown} />
                 </span>
             </div>
             {/* Card content (conditionally rendered based on expanded state) */}
             {expanded && (
-                <div className="card-content" style={{position:"relative", display:"flex", flexDirection:"column"}}>
-                   {params.ItemName} - ₹{params.ItemCost}
+                <div className="p-2 border border-black hover:bg-[#ffa07a]" style={{position:"relative", display:"flex", flexDirection:"column"}}>
+                  <div className="font-bold"> {params.ItemName} - ₹{params.ItemCost} </div>
                     <br/>
                     {params.ItemDescription}
                     <br/>
                     {/* <div style={{display:"flex", alignItems:"center"}}> */}
-                      <img src={IMAGE_LINK_CLODINARY+params.imageId} style={{width:"120px",height:"100px", display:"flex", justifyContent:"center", borderRadius:"3px" }}>
+                      <img className="m-auto" src={IMAGE_LINK_CLODINARY+params.imageId} style={{width:"120px",height:"100px", display:"flex", justifyContent:"center", borderRadius:"3px" }}>
                       </img> 
                     <div/>
                 </div>

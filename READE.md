@@ -43,3 +43,8 @@
 
 - splitting our app into moudles so that load does not fall on single js file or bundle we divide it into bundles
 - we will load when required 
+
+# tailwind
+- It is very light weight and it only loads the classes which are used in the code
+- we can dynamically change things like change the background color based on screensize etc
+- we can provide the darkmode in css along the go without doing it seperately

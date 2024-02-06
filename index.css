@@ -1,4 +1,7 @@
-#headingg{
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* #headingg{
     color: aqua;
 }
 
@@ -42,7 +45,7 @@
 .cardcontainer{
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: space-between; */
+    /* justify-content: space-between; 
 }
 .searchClass{
     padding: 2px;
@@ -92,4 +95,4 @@
 .user-card{
     border: 1px solid black;
     padding: 10px;
-}
+} */
