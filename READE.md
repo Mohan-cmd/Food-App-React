@@ -48,3 +48,24 @@
 - It is very light weight and it only loads the classes which are used in the code
 - we can dynamically change things like change the background color based on screensize etc
 - we can provide the darkmode in css along the go without doing it seperately
+
+# React Dev tools in chrome extension
+- we can get virual dom structure and also helps in debugging with that we can check which comp is taking more time, less etc etc
+
+# controlled and uncontrolled component
+with respect to parent and if child compoenent
+- if a comnponent is controlling itself it is uncontrolled component else if controlled by parent it is controlled component 
+
+-lifting the state up 
+
+# Using createContext we can creaate and use that data anywhere in the application using useContext Hook
+
+# Using example <UserContext.Provider value={{loggedInUser: userName}} we can override the values inside the tags whereever we have used them
+
+# Difference between createContext and redux is both do same operation but redux is external library which we have to install it
+
+# Redux
+- for example if we want to add items in the cart when we click on add correseponding to product it dispatches Action -> which in turn calls a reducer function -> which updates the slice of the redux store than we use selector(i.e., called subscribing to the store) on the header of the cart to display the cart
+ (Add -> Dispatch action -> Reducer Function -> updates slice of cart)
+
+ - Install @reduxjs/toolkit and react-redux

@@ -6,11 +6,14 @@ import Card from "./Card";
 import ShimmerCard from "./ShimmerCard";
 import ResCategory from "./ResCategory";
 
+
 const Restaurants =() =>{
 
     const {restaurantId}= useParams();
+    const [showmenuIndex,setShowMenuIndex]=useState(0)
+    const [accshowValue,setaccShowValue]=useState(true)
     //const [items,setitems] = useState([]);
-     
+   
     //console.log(restaurantId)
 
         // useEffect (()=>{
@@ -49,7 +52,11 @@ const Restaurants =() =>{
            </ul> */}
           <h2>{resname}</h2>
           {
-             Categories.map((cat,index)=><ResCategory key={index} menuData={cat?.card?.card}/>)  
+             Categories.map((cat,index)=>
+             // here ResCategory is a controlled component as it is controlled by parent and not by itself
+             <ResCategory key={index} menuData={cat?.card?.card} 
+               showValue={(index===showmenuIndex && accshowValue )? true:false} settShowValue ={(val)=>setaccShowValue(val)} setShowIndex={()=>setShowMenuIndex(index)}
+             />)  
           }
              
         </div>

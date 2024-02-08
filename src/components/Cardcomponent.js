@@ -28,7 +28,7 @@ export const withPromotedLabel = (InpRestaurant)=>{
       return(
         <div>
        
-          <div className="absolute ml-2.5 mt-3 p-2 rounded-md text-sm bg-yellow-500 shadow-lg shadow-slate-950 font-bold">{props?.resData?.info?.aggregatedDiscountInfoV3?.subHeader || props?.resData?.info?.aggregatedDiscountInfoV3?.discountTag} - {props.resData.info.aggregatedDiscountInfoV3.header}</div>
+          <div className="absolute ml-2.5 mt-3 p-2 rounded-md text-sm bg-yellow-500 shadow-lg shadow-slate-950 font-bold">{props.resData.info.aggregatedDiscountInfoV3.header} -{props?.resData?.info?.aggregatedDiscountInfoV3?.subHeader || props?.resData?.info?.aggregatedDiscountInfoV3?.discountTag}</div>
           {<InpRestaurant {...props}/>}
         </div>
       )
