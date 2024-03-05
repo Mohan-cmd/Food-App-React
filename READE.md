@@ -69,3 +69,11 @@ with respect to parent and if child compoenent
  (Add -> Dispatch action -> Reducer Function -> updates slice of cart)
 
  - Install @reduxjs/toolkit and react-redux
+
+ # Setting Up testing in js
+ - install React Testing Library
+ - installed jest
+ - install babel dependency
+ - config babel
+ -config parcel config file to disable default babel transpilation
+ - install jsdom lib
